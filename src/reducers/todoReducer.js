@@ -1,5 +1,14 @@
 const initialState = {
-  todos: [],
+  todos: [
+    {
+      text: "Get pearls",
+      completed: false
+    },
+    {
+      text: "Get Komfitury",
+      completed: false
+    }
+  ],
   filter: "all"
 };
 
