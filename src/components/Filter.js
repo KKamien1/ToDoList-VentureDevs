@@ -19,10 +19,6 @@ class FilterBox extends Component {
       this.setState({ isEdited: true });
     }
 
-    console.log(
-      "focus",
-      document.getElementById("add-input") === document.activeElement
-    );
     if (!this.state.isEdited) {
       switch (event.keyCode) {
         case 97:

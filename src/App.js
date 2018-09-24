@@ -17,11 +17,11 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-								<Header />
-                <AddForm />
-                <FilterBox />
-                <List />
-                <Footer />
+            <Header />
+            <AddForm />
+            <FilterBox />
+            <List />
+            <Footer />
           </div>
         </Router>
       </Provider>

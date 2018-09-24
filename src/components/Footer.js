@@ -6,7 +6,8 @@ const Footer = props => {
     <footer className="footer">
       <div className="content has-text-centered">
         <p>
-          <strong>ToDo List</strong> by <Link to="https://thinkstudio.pl">Krzysztof Kamieniecki</Link> JavaScript Developer.
+          <strong>ToDo List</strong> by{" "}
+          <Link to="https://thinkstudio.pl">Krzysztof Kamieniecki</Link>{" "}
         </p>
       </div>
     </footer>
