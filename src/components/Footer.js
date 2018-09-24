@@ -3,14 +3,10 @@ import { Link } from "react-router-dom";
 
 const Footer = props => {
   return (
-    <footer className="footer is-flex">
+    <footer className="footer">
       <div className="content has-text-centered">
         <p>
-          <strong>ToDo List</strong> by{" "}
-          <Link to="https://thinkstudio.pl">Krzysztof Kamieniecki</Link>.
-          JavaScript Developer
-          <Link to="http://opensource.org/licenses/mit-license.php">MIT</Link>.
-          The website content is licensed
+          <strong>ToDo List</strong> by <Link to="https://thinkstudio.pl">Krzysztof Kamieniecki</Link> JavaScript Developer.
         </p>
       </div>
     </footer>

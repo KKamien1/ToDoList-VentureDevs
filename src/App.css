@@ -1,34 +1,85 @@
+html,
+body,
+#root {
+  height: 100%;
+  padding: 0;
+}
 .App {
   text-align: center;
   font-family: "Yatra One", cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
-.App-header {
-  height: 150px;
+.header {
+  height: 180px;
   padding: 20px;
   color: white;
-  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 209, 178, 0.1);
+  border-bottom: 1px solid #ddd;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  text-align: center;
+  background: rgba(0, 209, 178, 0.5) !important;
+  border-top: 1px solid #ddd;
+}
+.title {
+  display: flex;
+  color: #006959;
+}
+.add-button {
+  color: #007967;
+  background: rgba(0, 209, 178, 0.5) !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter {
+  margin: 1em 0;
 }
 
-.list {
-  min-height: 50vh;
-}
 .item {
   padding: 1em;
   text-align: left;
-  line-height: 2em;
+  line-height: 1.5em;
+  color: #007967;
+  font-size: 2em;
+  border-bottom: 1px #ddd solid;
+  transition: all 0.5s ease;
+}
+.item:hover {
+  background: rgba(0, 209, 178, 0.3);
+}
+#add-input {
+  font-family: "Yatra One", cursive;
+  color: #007967;
+}
+.filter__button {
+  width: 20%;
+  color: rgba(0, 209, 178, 1) !important;
+  border-color: rgba(0, 209, 178, 0.4) !important;
+  transition: all 0.3s ease-in;
+}
+.filter__button:hover {
+  background: rgba(0, 209, 178, 0.4) !important;
+  box-shadow: 1px 1px 3px 1px #aaa;
+}
+.button--active {
+  background: rgba(0, 209, 178, 0.4) !important;
 }
 .item--done {
   text-decoration: line-through;
+  color: #999;
+}
+.input--edition {
+  font-size: 1.5em;
 }
 .button {
   margin: 0 5px;
