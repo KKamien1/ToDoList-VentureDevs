@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import classnames from "classnames";
 import * as actions from "../actions/";
 
 class AddButton extends Component {
@@ -38,7 +37,6 @@ componentWillUnmount() {
   }
 
   render() {
-		console.log('this.props', this.props)
     return (
 			<div className="section">
 			<div className="container">
@@ -59,7 +57,7 @@ componentWillUnmount() {
           <button
             className="add-button button is-large is-rounded is-fullwidth"
             onClick={() => this.props.addItem(this.state.addTodo)}
-          >
+          ><span className="icon has-text-success is-pulled-left"><i className="icon ion-md-add-circle-outline"/></span>
             Add
           </button>
         </div>

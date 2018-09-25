@@ -88,7 +88,7 @@ class FilterBox extends Component {
               To Do
             </button>
             <button
-              className="button is-rounded"
+              className="filter__button button is-rounded"
               onClick={() => this.props.toggleAll()}
             >
               Toggle

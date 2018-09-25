@@ -15,11 +15,11 @@ const todosReducer = (state = initialState, action) => {
     case "ADD_ITEM":
       return action.text
         ? [
-            ...state,
-            {
-              text: action.text,
-              completed: false
-            }
+					{
+						text: action.text,
+						completed: false
+					},
+            ...state
           ]
 				: state;
 				

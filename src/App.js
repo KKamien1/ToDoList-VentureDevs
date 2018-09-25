@@ -7,8 +7,8 @@ import AddForm from "./components/AddForm";
 import FilterBox from "./components/Filter";
 import Footer from "./components/Footer";
 
-import "./App.css";
-import "./bulma.css";
+//import "./App.sass";
+import "./bulma/bulma.sass";
 import store from "./store";
 
 class App extends Component {
