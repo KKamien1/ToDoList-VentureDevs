@@ -5,44 +5,44 @@ const initialState = [
   },
   {
     text: "Get Komfitury",
-		completed: true
+    completed: true
   }
 ];
 
-const todosReducer = (state = initialState, action) => {
+const todosReducer = (state = [], action) => {
   console.log("------------todosReducer---------state, action", state, action);
   switch (action.type) {
     case "ADD_ITEM":
       return action.text
         ? [
-					{
-						text: action.text,
-						completed: false
-					},
+            {
+              text: action.text,
+              completed: false
+            },
             ...state
           ]
-				: state;
-				
-		case "EDIT_ITEM": {
-			return state.map((todo, index) => {
-				return index === action.index
-				? Object.assign({}, todo, { edition: true })
-				: Object.assign({}, todo, { edition: false });
-			});
-		}
-		case "SAVE_ITEM": {
-			return state.map((todo, index) => {
-				return index === action.index
-				? Object.assign({}, todo, { text: action.text, edition:false })
-				: todo
-			});
-		}
-		case "CANCEL_EDIT": {
-			return state.map((todo, index) => {
-				delete todo.edition
-				return todo
-			});
-		}
+        : state;
+
+    case "EDIT_ITEM": {
+      return state.map((todo, index) => {
+        return index === action.index
+          ? Object.assign({}, todo, { edition: true })
+          : Object.assign({}, todo, { edition: false });
+      });
+    }
+    case "SAVE_ITEM": {
+      return state.map((todo, index) => {
+        return index === action.index
+          ? Object.assign({}, todo, { text: action.text, edition: false })
+          : todo;
+      });
+    }
+    case "CANCEL_EDIT": {
+      return state.map((todo, index) => {
+        delete todo.edition;
+        return todo;
+      });
+    }
 
     case "TOGGLE_ITEM":
       return state.map((todo, index) => {

@@ -9,25 +9,26 @@ class AddButton extends Component {
     this.state = {
       addTodo: ""
     };
-		this.onChange = this.onChange.bind(this);
-		this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.onChange = this.onChange.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
- handleKeyPress(event) {
-	if (event.keyCode === 13) {
-		this.props.addItem(this.state.addTodo)}
-		else {return}
-}
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.props.addItem(this.state.addTodo);
+    } else {
+      return;
+    }
+  }
 
-componentDidMount() {
-	this.addInput.focus(); 
-	 document.addEventListener('keypress', this.handleKeyPress);
-}
+  componentDidMount() {
+    this.addInput.focus();
+    document.addEventListener("keypress", this.handleKeyPress);
+  }
 
-componentWillUnmount() {
-	 document.removeEventListener('keypress', this.handleKeyPress);
-}
-
+  componentWillUnmount() {
+    document.removeEventListener("keypress", this.handleKeyPress);
+  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({ addTodo: "" });
@@ -38,32 +39,40 @@ componentWillUnmount() {
 
   render() {
     return (
-			<div className="section">
-			<div className="container">
-      <div className="columns">
-        <div className="column is-three-quarters">
-          <input
-						id="add-input"
-            type="text"
-            name="addTodo"
-            className="add-input input is-large is-rounded"
-						value={this.state.addTodo}
-						ref={(input) => { this.addInput = input; }} 
-            onChange={this.onChange}
-            placeholder="add task"
-          />
-        </div>
-        <div className="column">
-          <button
-            className="add-button button is-large is-rounded is-fullwidth"
-            onClick={() => this.props.addItem(this.state.addTodo)}
-          ><span className="icon has-text-success is-pulled-left"><i className="icon ion-md-add-circle-outline"/></span>
-            Add
-          </button>
+      <div className="section">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-three-quarters">
+              <input
+                id="add-input"
+                type="text"
+                name="addTodo"
+                className="add-input input is-large is-rounded"
+                value={this.state.addTodo}
+                ref={input => {
+                  this.addInput = input;
+                }}
+                onChange={this.onChange}
+                placeholder="add task"
+              />
+              {(() =>
+                (document.getElementById("add-input").placeholder =
+                  "Come on!"))()}
+            </div>
+            <div className="column">
+              <button
+                className="add-button button is-large is-rounded is-fullwidth"
+                onClick={() => this.props.addItem(this.state.addTodo)}
+              >
+                <span className="icon add-icon">
+                  <i className="icon ion-md-add-circle-outline" />
+                </span>
+                Add
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-			</div>
-			</div>
     );
   }
 }

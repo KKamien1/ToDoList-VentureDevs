@@ -84,7 +84,7 @@ class List extends Component {
                 })}
                 onClick={() => this.props.toggleItem(index)}
               >
-                <span className="icon has-text-success">
+                <span className="icon">
                   <i
                     className={classnames("icon", {
                       "ion-md-checkmark": todo.completed
@@ -96,15 +96,15 @@ class List extends Component {
                 className="item__button button is-rounded "
                 onClick={() => this.props.editItem(index)}
               >
-                <span className="icon has-text-success">
+                <span className="icon">
                   <i className="icon ion-md-create" />
                 </span>
               </button>
               <button
-                className="button is-rounded"
+                className="item__button button is-rounded"
                 onClick={() => this.props.deleteItem(index)}
               >
-                <span className="icon has-text-success">
+                <span className="icon">
                   <i className="icon ion-md-close-circle-outline" />
                 </span>
               </button>
@@ -121,6 +121,9 @@ class List extends Component {
       <div className="section">
         <div className="container fluid">
           <div className="container">
+            {!this.props.todos.length ? (
+              <p>everythingDone ? R_U_SURE_? : addTask </p>
+            ) : null}
             <ul className="list">{this.createItems(filtered)}</ul>
           </div>
         </div>

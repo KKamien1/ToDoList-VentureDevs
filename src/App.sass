@@ -1,109 +1,118 @@
+
+//$primary: #006959;
+$success: #000;
+  
 html,
 body,
+#root 
+  height: 100%
+  padding: 0
 
-.App {
-  min-height: 100%;
-  text-align: center;
-  font-family: "Yatra One", cursive;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: space-between;
-}
+.App 
+  min-height: 100%
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  justify-content: space-between
 
-.header {
-  height: 180px;
-  padding: 20px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 209, 178, 0.1);
-  border-bottom: 1px solid #ddd;
-}
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #006959;
-  margin-top: 100px;
-  padding: 1rem;
-  text-align: center;
-  background: rgba(0, 209, 178, 0.5) !important;
-  border-top: 1px solid #ddd;
-}
 
-.title {
-  display: flex;
-  color: #006959;
-}
-.add-button {
-  color: #007967;
-  background: rgba(0, 209, 178, 0.5) !important;
-}
+.header 
+  height: 180px
+  padding: 20px
+  color: white
+  display: flex
+  align-items: center
+  justify-content: center
+  background: rgba(0, 209, 178, 0.1)
+  border-bottom: 1px solid #ddd
 
-.filter {
-  margin: 1em 0 2em;
-}
+.footer 
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #006959
+  margin-top: 100px
+  padding: 1rem
+  text-align: center
+  background: rgba(0, 209, 178, 0.5) !important
+  border-top: 1px solid #ddd
 
-.item {
-  padding: .1em 0;
-  text-align: left;
-  line-height: 1.5em;
-  color: #007967;
-  font-size: 2em;
-  border-bottom: 1px #ddd solid;
-  transition: all 0.5s ease;
-}
+.title 
+  display: flex
+  color: #006959
 
-.icon::before {
-	padding:0 2px;
-}
+.add-button 
+  color: #007967
+  background: rgba(0, 209, 178, 0.5) !important
 
-.item:hover {
-  background: rgba(0, 209, 178, 0.3);
-}
-#add-input {
-  font-family: "Yatra One", cursive;
-  color: #007967;
-}
-.filter__button {
-  width: 20%;
-  color: rgba(0, 128, 109, 1) !important;
-  border-color: rgba(0, 209, 178, 0.4) !important;
-  transition: all 0.3s ease-in;
-}
-.filter__button:hover {
-  background: rgba(0, 209, 178, 0.4) !important;
-  box-shadow: 1px 1px 3px 1px #aaa;
-}
-.item__button {
-  width: 20%;
-  color: rgba(0, 128, 109, 1) !important;
-  border-color: rgba(0, 209, 178, 0.4) !important;
-  transition: all 0.3s ease-in;
-}
-.item__button:hover {
-  background: rgba(0, 209, 178, 0.4) !important;
-  box-shadow: 1px 1px 3px 1px #aaa;
-}
-.button--active {
-  background: rgba(0, 209, 178, 0.4) !important;
-}
-.item--done {
-  text-decoration: line-through;
-  color: #999;
-}
-.input--edition {
-  font-size: 1.5em;
-}
-.button {
-  margin: 0 5px;
-}
+.add-icon 
+  float:left !important
 
-@media screen and (max-width: 768px) {
-  .section {
-    padding: 2.5em;
-    margin: 0;
-  }
-}
+.list 
+  min-height: 15vh
+.filter 
+  margin: 1em 0 2em
+
+
+.item 
+  padding: .1em 0
+  text-align: left
+  line-height: 1.5em
+  color: #007967
+  font-size: 2em
+  border-bottom: 1px #ddd solid
+  transition: all 0.5s ease
+
+
+.icon::before 
+	padding: 0 2px
+
+
+.item:hover 
+  background: rgba(0, 209, 178, 0.3)
+
+#add-input 
+  font-family: "Yatra One", cursive
+  color: #007967
+
+.filter__button 
+  width: 20%
+  color: rgba(0, 128, 109, 1) !important
+  border-color: rgba(0, 209, 178, 0.4) !important
+  transition: all 0.3s ease-in
+
+.filter__button:hover 
+  background: rgba(0, 209, 178, 0.4) !important
+  box-shadow: 1px 1px 3px 1px #aaa
+
+.item__button 
+  width: 20%
+  color: rgba(0, 128, 109, 1) !important
+  border-color: rgba(0, 209, 178, 0.4) !important
+  transition: all 0.3s ease-in
+
+.item__button:hover 
+  background: rgba(0, 209, 178, 0.4) !important
+  box-shadow: 1px 1px 3px 1px #aaa
+
+.button--active 
+  background: rgba(0, 209, 178, 0.4) !important
+
+.item--done 
+  text-decoration: line-through
+  color: #999
+
+.input--edition 
+  font-size: 1.5em
+
+.button 
+  margin: 0 5px
+
+
+@media screen and (max-width: 768px) 
+  .section 
+    padding: 2.5em
+    margin: 0
+  
+
