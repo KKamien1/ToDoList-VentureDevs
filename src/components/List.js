@@ -14,9 +14,8 @@ class List extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.state.isEdited = nextProps.todos.filter(todo => todo.edition);
-    if (this.state.isEdited.length)
-      this.setState({ textEdited: this.state.isEdited[0].text });
+    let isEdited = nextProps.todos.filter(todo => todo.edition);
+    if (isEdited.length) this.setState({ textEdited: isEdited[0].text });
   }
 
   getList(filterType) {
@@ -37,62 +36,80 @@ class List extends Component {
       if (todo.edition) {
         return (
           <li key={index} className="item columns">
-						<div className="column is-two-thirds">
-							<input
-								className="input is-large is-rounded"
-								name="textEdited"
-								value={this.state.textEdited}
-								onChange={this.onChange}
-							/>
-						</div>
+            <div className="column is-two-thirds">
+              <input
+                className="input is-large is-rounded"
+                name="textEdited"
+                value={this.state.textEdited}
+                onChange={this.onChange}
+              />
+            </div>
             <div className="column">
-						<div className="is-pulled-right">
-							<button
-								className="button is-large is-rounded has-background-primary"
-								onClick={() => this.props.cancelEdit(index)}
-							>
-								Cancel
-							</button>
-							<button
-								className="button is-large is-rounded has-background-primary"
-								onClick={() => this.props.saveItem(index, this.state.textEdited)}
-							>
-								Save
-							</button>
-							</div>
-						</div >
+              <div className="is-pulled-right">
+                <button
+                  className="button is-large is-rounded has-background-primary"
+                  onClick={() => this.props.cancelEdit(index)}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="button is-large is-rounded has-background-primary"
+                  onClick={() =>
+                    this.props.saveItem(index, this.state.textEdited)
+                  }
+                >
+                  Save
+                </button>
+              </div>
+            </div>
           </li>
         );
       }
       return (
         <li key={index} className="item columns is-mobile">
           <span
-            className={classnames("column is-size-5-mobile is-three-quarters-desktop " , { "item--done": todo.completed })}
+            className={classnames(
+              "column is-size-5-mobile is-three-quarters-desktop ",
+              { "item--done": todo.completed }
+            )}
             onClick={() => this.props.toggleItem(index)}
           >
             {todo.text}
-					</span>
+          </span>
           <div className="column">
-						<div className="is-pulled-right">
-							<button
-								className={classnames("item__button button is-rounded ", { "button--active": todo.completed })}
-								onClick={() => this.props.toggleItem(index)}
-							>
-								<span className="icon has-text-success"><i className={classnames("icon" , { "ion-md-checkmark": todo.completed })} /></span>
-							</button>
-							<button
-								className="item__button button is-rounded "
-								onClick={() => this.props.editItem(index)}
-							>
-								<span className="icon has-text-success"><i className="icon ion-md-create" /></span>
-							</button>
-							<button	className="button is-rounded"
-								onClick={() => this.props.deleteItem(index)}
-							>
-								<span className="icon has-text-success"><i className="icon ion-md-close-circle-outline" /></span>
-								</button>
-						</div>
-					</div>
+            <div className="is-pulled-right">
+              <button
+                className={classnames("item__button button is-rounded ", {
+                  "button--active": todo.completed
+                })}
+                onClick={() => this.props.toggleItem(index)}
+              >
+                <span className="icon has-text-success">
+                  <i
+                    className={classnames("icon", {
+                      "ion-md-checkmark": todo.completed
+                    })}
+                  />
+                </span>
+              </button>
+              <button
+                className="item__button button is-rounded "
+                onClick={() => this.props.editItem(index)}
+              >
+                <span className="icon has-text-success">
+                  <i className="icon ion-md-create" />
+                </span>
+              </button>
+              <button
+                className="button is-rounded"
+                onClick={() => this.props.deleteItem(index)}
+              >
+                <span className="icon has-text-success">
+                  <i className="icon ion-md-close-circle-outline" />
+                </span>
+              </button>
+            </div>
+          </div>
         </li>
       );
     });

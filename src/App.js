@@ -7,7 +7,7 @@ import AddForm from "./components/AddForm";
 import FilterBox from "./components/Filter";
 import Footer from "./components/Footer";
 
-//import "./App.sass";
+import "./App.sass";
 import "./bulma/bulma.sass";
 import store from "./store";
 
