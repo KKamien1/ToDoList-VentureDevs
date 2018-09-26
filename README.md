@@ -31,3 +31,5 @@ yarn start
 - `canvas`
 - `requestAnimationFrame`
 - `Vanila JavaScript`
+
+## Data stored in LocalStore
