@@ -1,16 +1,4 @@
-const initialState = [
-  {
-    text: "Get pearls",
-    completed: false
-  },
-  {
-    text: "Get Komfitury",
-    completed: true
-  }
-];
-
 const todosReducer = (state = [], action) => {
-  console.log("------------todosReducer---------state, action", state, action);
   switch (action.type) {
     case "ADD_ITEM":
       return action.text

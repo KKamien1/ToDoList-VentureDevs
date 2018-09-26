@@ -1,6 +1,15 @@
-
-//$primary: #006959;
-$success: #000;
+$primary: #006959
+$primary-dark: hsl(170, 100%, 16%)
+$second : rgba(0, 209, 178, 0.4) !important
+$grey: #ddd;
+$white: hsl(171, 100%, 97%)
+$focus-border: hsl(171, 79%, 40%)
+$title-color: $primary !default
+$link: $primary !default
+$link-hover: $white !default
+$link-hover-border: $second !default
+$link-focus: $primary !default
+$link-active: $primary-dark !default
   
 html,
 body,
@@ -20,40 +29,32 @@ body,
 .header 
   height: 180px
   padding: 20px
-  color: white
   display: flex
   align-items: center
   justify-content: center
-  background: rgba(0, 209, 178, 0.1)
-  border-bottom: 1px solid #ddd
+  background: $second
+  border-bottom: 1px solid $focus-border
 
 .footer 
   display: flex
   align-items: center
   justify-content: center
-  color: #006959
+  color: $primary
   margin-top: 100px
   padding: 1rem
   text-align: center
-  background: rgba(0, 209, 178, 0.5) !important
-  border-top: 1px solid #ddd
-
-.title 
-  display: flex
-  color: #006959
+  background: $second
+  border-top: 1px solid $focus-border
 
 .add-button 
-  color: #007967
-  background: rgba(0, 209, 178, 0.5) !important
-
-.add-icon 
-  float:left !important
+	.icon 
+		margin-right: 1em !important
 
 .list 
   min-height: 15vh
+
 .filter 
   margin: 1em 0 2em
-
 
 .item 
   padding: .1em 0
@@ -61,7 +62,7 @@ body,
   line-height: 1.5em
   color: #007967
   font-size: 2em
-  border-bottom: 1px #ddd solid
+  border-bottom: 1px $grey solid
   transition: all 0.5s ease
 
 
@@ -70,11 +71,10 @@ body,
 
 
 .item:hover 
-  background: rgba(0, 209, 178, 0.3)
+  background: $second
 
 #add-input 
-  font-family: "Yatra One", cursive
-  color: #007967
+  color: $primary
 
 .filter__button 
   width: 20%
@@ -116,3 +116,4 @@ body,
     margin: 0
   
 
+@import "./bulma/bulma.sass";

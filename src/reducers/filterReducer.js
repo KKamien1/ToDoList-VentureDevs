@@ -1,12 +1,13 @@
-const filterReducer = (state = "show-all", action) => {
-  console.log("--------FILTER---------", action);
+const filterReducer = (state = "SHOW-ALL", action) => {
   switch (action.type) {
-    case "show-done":
-      return "show-done";
-    case "show-todo":
-      return "show-todo";
+    case "SHOW-DONE":
+      return "SHOW-DONE";
+    case "SHOW-TODO":
+      return "SHOW-TODO";
+    case "SEARCH":
+      return action.text;
     default:
-      return "show-all";
+      return "SHOW-ALL";
   }
 };
 

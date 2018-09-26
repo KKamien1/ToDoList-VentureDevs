@@ -22,13 +22,13 @@ class FilterBox extends Component {
     if (!this.state.isEdited) {
       switch (event.keyCode) {
         case 97:
-          this.props.filterAction({ type: "show-all" });
+          this.props.filterAction({ type: "SHOW-ALL" });
           break;
         case 100:
-          this.props.filterAction({ type: "show-done" });
+          this.props.filterAction({ type: "SHOW-DONE" });
           break;
         case 117:
-          this.props.filterAction({ type: "show-todo" });
+          this.props.filterAction({ type: "SHOW-TODO" });
           break;
         case 116:
           this.props.toggleAll();
@@ -53,11 +53,11 @@ class FilterBox extends Component {
           <li>
             <button
               className={classnames("filter__button button is-rounded", {
-                "button--active": this.props.filterType === "show-all"
+                "button--active": this.props.filterType === "SHOW-ALL"
               })}
               onClick={() =>
                 this.props.filterAction({
-                  type: "show-all"
+                  type: "SHOW-ALL"
                 })
               }
             >
@@ -65,11 +65,11 @@ class FilterBox extends Component {
             </button>
             <button
               className={classnames("filter__button  button is-rounded", {
-                "button--active": this.props.filterType === "show-done"
+                "button--active": this.props.filterType === "SHOW-DONE"
               })}
               onClick={() =>
                 this.props.filterAction({
-                  type: "show-done"
+                  type: "SHOW-DONE"
                 })
               }
             >
@@ -77,11 +77,11 @@ class FilterBox extends Component {
             </button>
             <button
               className={classnames("filter__button  button is-rounded", {
-                "button--active": this.props.filterType === "show-todo"
+                "button--active": this.props.filterType === "SHOW-TODO"
               })}
               onClick={() =>
                 this.props.filterAction({
-                  type: "show-todo"
+                  type: "SHOW-TODO"
                 })
               }
             >

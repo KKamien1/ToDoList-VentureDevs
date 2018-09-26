@@ -8,6 +8,9 @@ class List extends Component {
   constructor() {
     super();
     this.state = {
+      welcomeText: "everythingDone ? R_U_SURE_? : addTask",
+      nothingDoneText: "nothingDone ? doYourJob : keepItUp",
+      nothingToDoText: "nothigToDo ? addSomeMore : backToWork",
       textEdited: ""
     };
     this.onChange = this.onChange.bind(this);
@@ -20,12 +23,37 @@ class List extends Component {
 
   getList(filterType) {
     switch (filterType) {
-      case "show-done":
-        return this.props.todos.filter(todo => todo.completed);
-      case "show-todo":
-        return this.props.todos.filter(todo => !todo.completed);
-      default:
+      case "SHOW-ALL":
         return this.props.todos;
+      case "SHOW-DONE":
+        return this.props.todos.filter(todo => todo.completed);
+      case "SHOW-TODO":
+        return this.props.todos.filter(todo => !todo.completed);
+      case "SEARCH": {
+        return this.props.todos.filter(todo => !todo.completed);
+      }
+      default:
+        return this.props.todos.filter(
+          todo => todo.text.indexOf(filterType) > -1
+        );
+    }
+  }
+  getMessage(todos) {
+    let notEmptyList = this.props.todos.length > 0,
+      nothingDone =
+        this.props.todos.filter(todo => !todo.completed).length ===
+        this.props.todos.length,
+      everythingDone =
+        this.props.todos.filter(todo => todo.completed).length ===
+        this.props.todos.length;
+
+    if (notEmptyList) {
+      if (nothingDone && this.props.filterType === "SHOW-DONE")
+        return this.state.nothingDoneText;
+      if (everythingDone && this.props.filterType === "SHOW-TODO")
+        return this.state.nothingToDoText;
+    } else {
+      return this.state.welcomeText;
     }
   }
   onChange(e) {
@@ -47,13 +75,13 @@ class List extends Component {
             <div className="column">
               <div className="is-pulled-right">
                 <button
-                  className="button is-large is-rounded has-background-primary"
+                  className="button is-large is-rounded has-background-success"
                   onClick={() => this.props.cancelEdit(index)}
                 >
                   Cancel
                 </button>
                 <button
-                  className="button is-large is-rounded has-background-primary"
+                  className="button is-large is-rounded has-background-success"
                   onClick={() =>
                     this.props.saveItem(index, this.state.textEdited)
                   }
@@ -121,9 +149,7 @@ class List extends Component {
       <div className="section">
         <div className="container fluid">
           <div className="container">
-            {!this.props.todos.length ? (
-              <p>everythingDone ? R_U_SURE_? : addTask </p>
-            ) : null}
+            {<p>{this.getMessage(this.props.todos)}</p>}
             <ul className="list">{this.createItems(filtered)}</ul>
           </div>
         </div>

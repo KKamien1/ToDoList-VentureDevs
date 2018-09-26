@@ -55,13 +55,10 @@ class AddButton extends Component {
                 onChange={this.onChange}
                 placeholder="add task"
               />
-              {(() =>
-                (document.getElementById("add-input").placeholder =
-                  "Come on!"))()}
             </div>
             <div className="column">
               <button
-                className="add-button button is-large is-rounded is-fullwidth"
+                className="add-button button is-large is-rounded is-fullwidth has-background-success"
                 onClick={() => this.props.addItem(this.state.addTodo)}
               >
                 <span className="icon add-icon">

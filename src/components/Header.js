@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = props => {
-  return (
+	return (
 		<header className="header">
 		<h1 className="title is-size-1">
 			TODO LIST
