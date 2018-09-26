@@ -2,16 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-## Start app with
+## Production Version
+
+[https://kamykov.github.io/ToDoList-VentureDevs/](https://kamykov.github.io/ToDoList-VentureDevs/)
+
+## Development Version:
+
+[https://github.com/kamykov/ToDoList-VentureDevs](https://github.com/kamykov/ToDoList-VentureDevs)
+
+Start app with cloning the repo:
 
 ```
+git clone https://github.com/kamykov/ToDoList-VentureDevs.git
+```
+
+```
+npm install
 npm start
-```
-
-or
-
-```
-yarn start
 ```
 
 ## Keyboard Shortcuts

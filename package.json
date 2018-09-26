@@ -61,7 +61,7 @@
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0"
   },
-  "homepage": "http://kamykov.github.io/todoList",
+  "homepage": "https://kamykov.github.io/ToDoList-VentureDevs/",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
